@@ -1,0 +1,15 @@
+<%= form_for @recipe do |f| %>
+  <div class="field">
+    <%= f.label :title, 'Nazwa' %>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :description, 'Opis' %>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :duration, 'Czas przygotowania' %>
+    <%= f.number_field :duration %>
+  </div>
+  <%= f.submit 'Dodaj przepis' %>
+<% end %>
