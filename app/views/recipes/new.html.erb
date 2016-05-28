@@ -1,15 +1,19 @@
+<h3 class="text-center">Dodawanie nowego przepisu</h3>
 <%= form_for @recipe do |f| %>
-  <div class="field">
+  <div class="field medium-8 medium-centered columns text-center">
     <%= f.label :title, 'Nazwa' %>
     <%= f.text_field :title %>
   </div>
-  <div class="field">
+  <div class="field medium-8 medium-centered columns text-center">
     <%= f.label :description, 'Opis' %>
     <%= f.text_area :description %>
   </div>
-  <div class="field">
-    <%= f.label :duration, 'Czas przygotowania' %>
-    <%= f.number_field :duration %>
+  <div class="field medium-8 medium-centered columns text-center">
+    <%= f.label :duration, 'Czas przygotowania (w minutach)' %>
+    <%= f.number_field :duration, min: 1 %>
   </div>
-  <%= f.submit 'Dodaj przepis' %>
+  <div class="small button-group text-center">
+    <%= f.submit 'Dodaj', class: "small button text-center" %>
+    <%= link_to "Anuluj", root_path, class: "small button text-center" %>
+  </div>
 <% end %>
